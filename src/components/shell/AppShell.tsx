@@ -5,6 +5,7 @@ import {
   ScrollText, Activity, Plug, ServerCog, Rocket, BookOpen, GraduationCap,
   LifeBuoy, LineChart, Presentation, Map, Bell, Search, ChevronRight, Circle,
 } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { group: "Overview", items: [
@@ -110,6 +111,7 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
                 <Bell className="size-4" />
                 <span className="absolute top-1.5 right-1.5 size-1.5 rounded-full bg-primary" />
               </button>
+              <ThemeToggle />
               <div className="flex items-center gap-2 pl-3 border-l border-border">
                 <div className="size-8 rounded-full bg-gradient-to-br from-accent to-primary grid place-items-center text-[11px] font-semibold text-primary-foreground">JR</div>
                 <div className="hidden md:block leading-tight">
