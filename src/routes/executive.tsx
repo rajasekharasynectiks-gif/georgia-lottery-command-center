@@ -5,8 +5,10 @@ import { AreaChart, Area, BarChart, Bar, LineChart, Line, ResponsiveContainer, X
 
 export const Route = createFileRoute("/executive")({ component: Page, head: () => ({ meta: [{ title: "Executive Reporting — GLC" }] }) });
 
-const submitted = Array.from({length:12},(_,i)=>({m:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][i], v: 1200+i*140+Math.round(Math.random()*180)}));
-const approvals = submitted.map(s=>({...s, approved: Math.round(s.v*(0.82+Math.random()*0.06))}));
+const _seed = [37, 112, 55, 168, 90, 22, 143, 78, 132, 45, 160, 100];
+const _seed2 = [0.83, 0.86, 0.85, 0.84, 0.87, 0.83, 0.85, 0.86, 0.84, 0.87, 0.85, 0.86];
+const submitted = Array.from({length:12},(_,i)=>({m:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][i], v: 1200+i*140+_seed[i]}));
+const approvals = submitted.map((s,i)=>({...s, approved: Math.round(s.v*_seed2[i])}));
 const composition = [
   { name: "Convenience", value: 42, fill: "var(--color-primary)" },
   { name: "Grocery", value: 24, fill: "var(--color-accent)" },
@@ -14,7 +16,8 @@ const composition = [
   { name: "Big-box", value: 10, fill: "var(--color-warning)" },
   { name: "Other", value: 6, fill: "var(--color-info)" },
 ];
-const revenueTrend = Array.from({length:12},(_,i)=>({m: submitted[i].m, r: 1.6+i*0.18+Math.random()*0.2}));
+const _seed3 = [0.05, 0.12, 0.08, 0.15, 0.10, 0.18, 0.07, 0.14, 0.11, 0.16, 0.09, 0.13];
+const revenueTrend = Array.from({length:12},(_,i)=>({m: submitted[i].m, r: +(1.6+i*0.18+_seed3[i]).toFixed(2)}));
 
 function Page() {
   return (
