@@ -1,3 +1,4 @@
+import { rand } from "@/lib/rng";
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShell";
 import { Cpu, MemoryStick, Network, Clock, AlertTriangle, ActivitySquare, Timer } from "lucide-react";
@@ -5,8 +6,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export const Route = createFileRoute("/operations")({ component: Page, head: () => ({ meta: [{ title: "Monitoring & Operations — GLC" }] }) });
 
-const cpuData = Array.from({ length: 30 }, (_, i) => ({ t: i, v: 40 + Math.round(Math.sin(i/2) * 12 + Math.random() * 10) }));
-const latData = Array.from({ length: 30 }, (_, i) => ({ t: i, api: 120 + Math.round(Math.random() * 60), db: 40 + Math.round(Math.random() * 30) }));
+const cpuData = Array.from({ length: 30 }, (_, i) => ({ t: i, v: 40 + Math.round(Math.sin(i/2) * 12 + rand() * 10) }));
+const latData = Array.from({ length: 30 }, (_, i) => ({ t: i, api: 120 + Math.round(rand() * 60), db: 40 + Math.round(rand() * 30) }));
 
 const services = [
   ["Applicant Portal","Healthy","199 ms","99.99%","success"],

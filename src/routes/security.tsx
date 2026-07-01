@@ -1,3 +1,4 @@
+import { rand } from "@/lib/rng";
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShell";
 import { ShieldCheck, Fingerprint, KeySquare, UserCog, Clock4, KeyRound, Lock, Award, ScrollText, ShieldAlert, Radar, BellRing, Gauge, CheckCircle2 } from "lucide-react";
@@ -18,7 +19,7 @@ const controls = [
   { k: "API Security", i: ShieldAlert, s: "OAuth2 · JWT · Rate-limited", v: "Protected" },
 ];
 
-const trend = Array.from({ length: 14 }, (_, i) => ({ d: `D${i+1}`, events: 20 + Math.round(Math.random() * 40 + Math.sin(i) * 10), blocked: 15 + Math.round(Math.random() * 30) }));
+const trend = Array.from({ length: 14 }, (_, i) => ({ d: `D${i+1}`, events: 20 + Math.round(rand() * 40 + Math.sin(i) * 10), blocked: 15 + Math.round(rand() * 30) }));
 
 function Page() {
   return (

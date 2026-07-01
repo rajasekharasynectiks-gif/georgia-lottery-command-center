@@ -1,3 +1,4 @@
+import { rand } from "@/lib/rng";
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShell";
 import { Plug, Mail, ShieldCheck, FileText, CreditCard, Building2, Boxes } from "lucide-react";
@@ -15,7 +16,7 @@ const partners = [
   { k: "Future APIs (reserved)", i: Boxes, purpose: "Extensibility slots", status: "planned", latency: 0, success: 0 },
 ];
 
-const latencyTrend = Array.from({length: 20}, (_,i)=>({ t:i, melissa: 120+Math.round(Math.random()*30), merchant: 380+Math.round(Math.random()*80), voltage: 32+Math.round(Math.random()*10) }));
+const latencyTrend = Array.from({length: 20}, (_,i)=>({ t:i, melissa: 120+Math.round(rand()*30), merchant: 380+Math.round(rand()*80), voltage: 32+Math.round(rand()*10) }));
 
 function Page() {
   return (

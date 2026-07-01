@@ -1,3 +1,4 @@
+import { rand } from "@/lib/rng";
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, StatCard, SectionCard, Pill } from "@/components/shell/AppShell";
 import { Activity, ShieldCheck, Users, DollarSign, Rocket, Server, TrendingUp, AlertTriangle, CheckCircle2, Clock } from "lucide-react";
@@ -10,8 +11,8 @@ export const Route = createFileRoute("/")({
 
 const volume = Array.from({ length: 24 }, (_, i) => ({
   h: `${i}:00`,
-  apps: 40 + Math.round(Math.sin(i / 3) * 20 + Math.random() * 18 + i * 1.5),
-  payments: 30 + Math.round(Math.cos(i / 3.5) * 15 + Math.random() * 14 + i * 1.1),
+  apps: 40 + Math.round(Math.sin(i / 3) * 20 + rand() * 18 + i * 1.5),
+  payments: 30 + Math.round(Math.cos(i / 3.5) * 15 + rand() * 14 + i * 1.1),
 }));
 
 const revenueBars = [

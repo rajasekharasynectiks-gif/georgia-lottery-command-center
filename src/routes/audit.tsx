@@ -1,3 +1,4 @@
+import { rand } from "@/lib/rng";
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShell";
 import { LogIn, LogOut, FileText, DollarSign, Settings, Download, Upload, ShieldAlert, UserCog, Filter, Search, Download as DL, MapPin } from "lucide-react";
@@ -5,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 export const Route = createFileRoute("/audit")({ component: Page, head: () => ({ meta: [{ title: "Audit & Compliance Center — GLC" }] }) });
 
-const hourly = Array.from({ length: 24 }, (_, i) => ({ h: `${i}h`, v: 400 + Math.round(Math.random() * 320 + Math.sin(i / 3) * 120) }));
+const hourly = Array.from({ length: 24 }, (_, i) => ({ h: `${i}h`, v: 400 + Math.round(rand() * 320 + Math.sin(i / 3) * 120) }));
 const events = [
   { t: "14:22:07", type: "Login", who: "sarah.miller@ga.gov", ip: "72.14.201.4", geo: "Atlanta, GA", risk: "low", icon: LogIn },
   { t: "14:21:48", type: "Document Access", who: "j.chen@retailer.com", ip: "24.90.44.19", geo: "Athens, GA", risk: "low", icon: FileText },
