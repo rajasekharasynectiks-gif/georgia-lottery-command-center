@@ -9,8 +9,104 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkflowRouteImport } from './routes/workflow'
+import { Route as VeracodeRouteImport } from './routes/veracode'
+import { Route as TrainingRouteImport } from './routes/training'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as PresentationRouteImport } from './routes/presentation'
+import { Route as OperationsRouteImport } from './routes/operations'
+import { Route as KnowledgeBaseRouteImport } from './routes/knowledge-base'
+import { Route as IntegrationsRouteImport } from './routes/integrations'
+import { Route as ExecutiveRouteImport } from './routes/executive'
+import { Route as EncryptionRouteImport } from './routes/encryption'
+import { Route as DisasterRecoveryRouteImport } from './routes/disaster-recovery'
+import { Route as DevopsRouteImport } from './routes/devops'
+import { Route as AuditRouteImport } from './routes/audit'
+import { Route as ArchitectureRouteImport } from './routes/architecture'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WorkflowRoute = WorkflowRouteImport.update({
+  id: '/workflow',
+  path: '/workflow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VeracodeRoute = VeracodeRouteImport.update({
+  id: '/veracode',
+  path: '/veracode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainingRoute = TrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperationsRoute = OperationsRouteImport.update({
+  id: '/operations',
+  path: '/operations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeBaseRoute = KnowledgeBaseRouteImport.update({
+  id: '/knowledge-base',
+  path: '/knowledge-base',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegrationsRoute = IntegrationsRouteImport.update({
+  id: '/integrations',
+  path: '/integrations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveRoute = ExecutiveRouteImport.update({
+  id: '/executive',
+  path: '/executive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EncryptionRoute = EncryptionRouteImport.update({
+  id: '/encryption',
+  path: '/encryption',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisasterRecoveryRoute = DisasterRecoveryRouteImport.update({
+  id: '/disaster-recovery',
+  path: '/disaster-recovery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevopsRoute = DevopsRouteImport.update({
+  id: '/devops',
+  path: '/devops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchitectureRoute = ArchitectureRouteImport.update({
+  id: '/architecture',
+  path: '/architecture',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +115,256 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/architecture': typeof ArchitectureRoute
+  '/audit': typeof AuditRoute
+  '/devops': typeof DevopsRoute
+  '/disaster-recovery': typeof DisasterRecoveryRoute
+  '/encryption': typeof EncryptionRoute
+  '/executive': typeof ExecutiveRoute
+  '/integrations': typeof IntegrationsRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
+  '/operations': typeof OperationsRoute
+  '/presentation': typeof PresentationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/training': typeof TrainingRoute
+  '/veracode': typeof VeracodeRoute
+  '/workflow': typeof WorkflowRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/architecture': typeof ArchitectureRoute
+  '/audit': typeof AuditRoute
+  '/devops': typeof DevopsRoute
+  '/disaster-recovery': typeof DisasterRecoveryRoute
+  '/encryption': typeof EncryptionRoute
+  '/executive': typeof ExecutiveRoute
+  '/integrations': typeof IntegrationsRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
+  '/operations': typeof OperationsRoute
+  '/presentation': typeof PresentationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/training': typeof TrainingRoute
+  '/veracode': typeof VeracodeRoute
+  '/workflow': typeof WorkflowRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/architecture': typeof ArchitectureRoute
+  '/audit': typeof AuditRoute
+  '/devops': typeof DevopsRoute
+  '/disaster-recovery': typeof DisasterRecoveryRoute
+  '/encryption': typeof EncryptionRoute
+  '/executive': typeof ExecutiveRoute
+  '/integrations': typeof IntegrationsRoute
+  '/knowledge-base': typeof KnowledgeBaseRoute
+  '/operations': typeof OperationsRoute
+  '/presentation': typeof PresentationRoute
+  '/roadmap': typeof RoadmapRoute
+  '/security': typeof SecurityRoute
+  '/support': typeof SupportRoute
+  '/training': typeof TrainingRoute
+  '/veracode': typeof VeracodeRoute
+  '/workflow': typeof WorkflowRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/architecture'
+    | '/audit'
+    | '/devops'
+    | '/disaster-recovery'
+    | '/encryption'
+    | '/executive'
+    | '/integrations'
+    | '/knowledge-base'
+    | '/operations'
+    | '/presentation'
+    | '/roadmap'
+    | '/security'
+    | '/support'
+    | '/training'
+    | '/veracode'
+    | '/workflow'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/architecture'
+    | '/audit'
+    | '/devops'
+    | '/disaster-recovery'
+    | '/encryption'
+    | '/executive'
+    | '/integrations'
+    | '/knowledge-base'
+    | '/operations'
+    | '/presentation'
+    | '/roadmap'
+    | '/security'
+    | '/support'
+    | '/training'
+    | '/veracode'
+    | '/workflow'
+  id:
+    | '__root__'
+    | '/'
+    | '/architecture'
+    | '/audit'
+    | '/devops'
+    | '/disaster-recovery'
+    | '/encryption'
+    | '/executive'
+    | '/integrations'
+    | '/knowledge-base'
+    | '/operations'
+    | '/presentation'
+    | '/roadmap'
+    | '/security'
+    | '/support'
+    | '/training'
+    | '/veracode'
+    | '/workflow'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArchitectureRoute: typeof ArchitectureRoute
+  AuditRoute: typeof AuditRoute
+  DevopsRoute: typeof DevopsRoute
+  DisasterRecoveryRoute: typeof DisasterRecoveryRoute
+  EncryptionRoute: typeof EncryptionRoute
+  ExecutiveRoute: typeof ExecutiveRoute
+  IntegrationsRoute: typeof IntegrationsRoute
+  KnowledgeBaseRoute: typeof KnowledgeBaseRoute
+  OperationsRoute: typeof OperationsRoute
+  PresentationRoute: typeof PresentationRoute
+  RoadmapRoute: typeof RoadmapRoute
+  SecurityRoute: typeof SecurityRoute
+  SupportRoute: typeof SupportRoute
+  TrainingRoute: typeof TrainingRoute
+  VeracodeRoute: typeof VeracodeRoute
+  WorkflowRoute: typeof WorkflowRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workflow': {
+      id: '/workflow'
+      path: '/workflow'
+      fullPath: '/workflow'
+      preLoaderRoute: typeof WorkflowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/veracode': {
+      id: '/veracode'
+      path: '/veracode'
+      fullPath: '/veracode'
+      preLoaderRoute: typeof VeracodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/training': {
+      id: '/training'
+      path: '/training'
+      fullPath: '/training'
+      preLoaderRoute: typeof TrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operations': {
+      id: '/operations'
+      path: '/operations'
+      fullPath: '/operations'
+      preLoaderRoute: typeof OperationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge-base': {
+      id: '/knowledge-base'
+      path: '/knowledge-base'
+      fullPath: '/knowledge-base'
+      preLoaderRoute: typeof KnowledgeBaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integrations': {
+      id: '/integrations'
+      path: '/integrations'
+      fullPath: '/integrations'
+      preLoaderRoute: typeof IntegrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/executive': {
+      id: '/executive'
+      path: '/executive'
+      fullPath: '/executive'
+      preLoaderRoute: typeof ExecutiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/encryption': {
+      id: '/encryption'
+      path: '/encryption'
+      fullPath: '/encryption'
+      preLoaderRoute: typeof EncryptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disaster-recovery': {
+      id: '/disaster-recovery'
+      path: '/disaster-recovery'
+      fullPath: '/disaster-recovery'
+      preLoaderRoute: typeof DisasterRecoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devops': {
+      id: '/devops'
+      path: '/devops'
+      fullPath: '/devops'
+      preLoaderRoute: typeof DevopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/architecture': {
+      id: '/architecture'
+      path: '/architecture'
+      fullPath: '/architecture'
+      preLoaderRoute: typeof ArchitectureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +377,23 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArchitectureRoute: ArchitectureRoute,
+  AuditRoute: AuditRoute,
+  DevopsRoute: DevopsRoute,
+  DisasterRecoveryRoute: DisasterRecoveryRoute,
+  EncryptionRoute: EncryptionRoute,
+  ExecutiveRoute: ExecutiveRoute,
+  IntegrationsRoute: IntegrationsRoute,
+  KnowledgeBaseRoute: KnowledgeBaseRoute,
+  OperationsRoute: OperationsRoute,
+  PresentationRoute: PresentationRoute,
+  RoadmapRoute: RoadmapRoute,
+  SecurityRoute: SecurityRoute,
+  SupportRoute: SupportRoute,
+  TrainingRoute: TrainingRoute,
+  VeracodeRoute: VeracodeRoute,
+  WorkflowRoute: WorkflowRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
