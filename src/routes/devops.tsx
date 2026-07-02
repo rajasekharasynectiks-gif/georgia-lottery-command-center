@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShell";
 import { GitBranch, PlayCircle, Rocket, ShieldCheck, TestTube, Package, Undo2, CheckCircle2, CircleDot } from "lucide-react";
 
-export const Route = createFileRoute("/devops")({ component: Page, head: () => ({ meta: [{ title: "DevOps — GLC" }] }) });
+export const Route = createFileRoute("/devops")({ component: Page, head: () => ({ meta: [{ title: "DevOps - GLC" }] }) });
 
 const stages = [
   { k: "Source", i: GitBranch, s: "main @ b8241fa", tone: "success" },
@@ -31,7 +31,7 @@ function Page() {
         <StatCard label="MTTR" value="18 min" tone="up" delta="Elite (DORA)" />
       </div>
 
-      <SectionCard title="Release Pipeline — glc-web v5.0.1" description="Every stage automated · human approval at prod gate">
+      <SectionCard title="Release Pipeline - glc-web v5.0.1" description="Every stage automated · human approval at prod gate">
         <div className="grid md:grid-cols-6 gap-2">
           {stages.map((s,i)=>(
             <div key={s.k} className={"rounded-lg border p-3 relative " + (s.tone==="success"?"border-success/40 bg-success/5":"border-info/40 bg-info/5")}>

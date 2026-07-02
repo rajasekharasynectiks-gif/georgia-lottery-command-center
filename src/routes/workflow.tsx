@@ -3,7 +3,7 @@ import { AppShell, SectionCard, Pill } from "@/components/shell/AppShell";
 import { UserPlus, ShieldCheck, FilePlus2, Save, Users2, Upload, Eye, Send, Cog, CreditCard, Wallet, Gavel, CheckCheck, Award } from "lucide-react";
 
 export const Route = createFileRoute("/workflow")({ component: Page,
-  head: () => ({ meta: [{ title: "Application Workflow — GLC" }, { name: "description", content: "End-to-end retailer licensing workflow with swim lanes and decision paths." }] }),
+  head: () => ({ meta: [{ title: "Application Workflow - GLC" }, { name: "description", content: "End-to-end retailer licensing workflow with swim lanes and decision paths." }] }),
 });
 
 const lanes = ["Applicant", "System", "GLC Reviewer", "Compliance"] as const;
@@ -97,7 +97,7 @@ function FragmentRow({ lane, steps }: { lane: Lane; steps: any[] }) {
             {i < steps.length - 1 && <Arrow />}
           </div>
         ))}
-        {steps.length === 0 && <span className="text-[11px] text-muted-foreground">—</span>}
+        {steps.length === 0 && <span className="text-[11px] text-muted-foreground">-</span>}
       </div>
     </>
   );

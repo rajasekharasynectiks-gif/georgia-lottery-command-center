@@ -11,15 +11,18 @@ function applyTheme(t: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    let initial: Theme = "dark";
+    let initial: Theme = "light";
     try {
       const saved = localStorage.getItem(KEY) as Theme | null;
-      if (saved === "light" || saved === "dark") initial = saved;
-      else if (window.matchMedia?.("(prefers-color-scheme: light)").matches) initial = "light";
+      if (saved === "light" || saved === "dark") {
+        initial = saved;
+      } else {
+        localStorage.setItem(KEY, "light");
+      }
     } catch {}
     setTheme(initial);
     applyTheme(initial);
@@ -44,7 +47,7 @@ export function ThemeToggle() {
       suppressHydrationWarning
     >
       <span
-        className="absolute top-1 h-7 w-7 rounded-full bg-gradient-to-br from-primary to-amber-700 shadow-[var(--shadow-glow)] transition-transform duration-300"
+        className="absolute top-1 h-7 w-7 rounded-full bg-gradient-to-br from-primary to-primary-hover shadow-[var(--shadow-glow)] transition-transform duration-300"
         style={{ transform: mounted && !isDark ? "translateX(40px)" : "translateX(0px)" }}
       />
       <span className="relative z-10 flex w-full items-center justify-between px-1.5 text-muted-foreground">
@@ -57,4 +60,4 @@ export function ThemeToggle() {
 
 // Runs before React hydrates so the correct theme class is present on <html>.
 // Inject via a <script> tag with this string as innerHTML in the root route.
-export const themeInitScript = `(function(){try{var k='glc-theme';var s=localStorage.getItem(k);var t=(s==='light'||s==='dark')?s:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');var r=document.documentElement;r.classList.toggle('light',t==='light');r.classList.toggle('dark',t==='dark');}catch(e){}})();`;
+export const themeInitScript = `(function(){try{var k='glc-theme';var s=localStorage.getItem(k);var t=(s==='light'||s==='dark')?s:'light';var r=document.documentElement;r.classList.toggle('light',t==='light');r.classList.toggle('dark',t==='dark');}catch(e){}})();`;

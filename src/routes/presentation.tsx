@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill } from "@/components/shell/AppShell";
 import { Rocket, ShieldCheck, TrendingUp, Cloud, Wrench, Users, DollarSign, Award, Cpu, GaugeCircle } from "lucide-react";
 
-export const Route = createFileRoute("/presentation")({ component: Page, head: () => ({ meta: [{ title: "Executive Presentation — GLC" }] }) });
+export const Route = createFileRoute("/presentation")({ component: Page, head: () => ({ meta: [{ title: "Executive Presentation - GLC" }] }) });
 
 function Page() {
   return (
@@ -15,7 +15,7 @@ function Page() {
         <div className="relative p-10 md:p-14">
           <Pill tone="primary">Georgia Lottery Corporation · RFP Final Presentation</Pill>
           <h1 className="mt-6 text-5xl md:text-6xl font-display font-semibold tracking-tight leading-[1.05]">
-            A modern licensing platform — <span className="text-gradient-gold">built to secure, scale, and serve the State of Georgia.</span>
+            A modern licensing platform - <span className="text-gradient-gold">built to secure, scale, and serve the State of Georgia.</span>
           </h1>
           <p className="mt-4 text-base text-muted-foreground max-w-3xl">Enterprise architecture, Voltage field-level encryption, Veracode-verified pipelines, 99.98% availability, and a delivery playbook designed for multi-decade operation.</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl">
@@ -29,7 +29,7 @@ function Page() {
       {/* Slide 2 */}
       <Slide n="02" title="Business Benefits" icon={TrendingUp}>
         <div className="grid md:grid-cols-3 gap-3">
-          {[["Faster Onboarding","Applications completed in 4.2 days — down from 6.2"],["Higher Approval Throughput","+22% applications processed per FTE"],["Revenue Assurance","End-to-end reconciliation with MerchantOne · zero unmatched"],["Better Applicant Experience","NPS +18 vs legacy portal"],["Auditability","Immutable trail meets state & federal audit standards"],["Cost of Operations","–34% $/application over 3 years"]].map((r,i)=>(
+          {[["Faster Onboarding","Applications completed in 4.2 days - down from 6.2"],["Higher Approval Throughput","+22% applications processed per FTE"],["Revenue Assurance","End-to-end reconciliation with MerchantOne · zero unmatched"],["Better Applicant Experience","NPS +18 vs legacy portal"],["Auditability","Immutable trail meets state & federal audit standards"],["Cost of Operations","-34% $/application over 3 years"]].map((r,i)=>(
             <div key={i} className="rounded-md border border-border bg-surface/60 p-4"><div className="text-sm font-semibold">{r[0]}</div><div className="text-xs text-muted-foreground mt-1">{r[1]}</div></div>
           ))}
         </div>
@@ -61,13 +61,13 @@ function Page() {
 
       <Slide n="06" title="Business Value & ROI" icon={DollarSign}>
         <div className="grid md:grid-cols-4 gap-3">
-          {[["3-year TCO","–34% vs legacy"],["Payback Period","14 months"],["Productivity Uplift","+22% per FTE"],["Risk Reduction","Insurance premium –12%"]].map(([k,v],i)=>(
+          {[["3-year TCO","-34% vs legacy"],["Payback Period","14 months"],["Productivity Uplift","+22% per FTE"],["Risk Reduction","Insurance premium -12%"]].map(([k,v],i)=>(
             <div key={i} className="rounded-md border border-border bg-surface/60 p-4"><div className="text-[10px] uppercase tracking-widest text-muted-foreground">{k}</div><div className="mt-1 text-3xl font-display font-semibold text-gradient-gold">{v}</div></div>
           ))}
         </div>
       </Slide>
 
-      <Slide n="07" title="Success Metrics — 12 months after go-live" icon={Award}>
+      <Slide n="07" title="Success Metrics - 12 months after go-live" icon={Award}>
         <ul className="grid md:grid-cols-2 gap-2 text-xs">
           {["≥ 99.95% platform availability","≤ 5 business day compliance decisions","≥ 95% first-time-right documentation","0 critical security findings for 90 days rolling","NPS ≥ 50 for applicants","100% audit coverage on regulated actions"].map((t,i)=>(
             <li key={i} className="rounded-md border border-border bg-surface/60 p-3 flex items-center gap-2"><span className="status-dot text-success" /> {t}</li>

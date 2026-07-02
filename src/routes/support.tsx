@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShell";
 import { LifeBuoy, Ticket, PhoneCall, MessageSquare, Wrench, CalendarClock, ShieldCheck } from "lucide-react";
 
-export const Route = createFileRoute("/support")({ component: Page, head: () => ({ meta: [{ title: "Warranty & Support — GLC" }] }) });
+export const Route = createFileRoute("/support")({ component: Page, head: () => ({ meta: [{ title: "Warranty & Support - GLC" }] }) });
 
 function Page() {
   return (

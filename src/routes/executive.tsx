@@ -3,7 +3,7 @@ import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShe
 import { Users, DollarSign, CheckCircle2, Clock, ShieldCheck, TrendingUp } from "lucide-react";
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, Legend } from "recharts";
 
-export const Route = createFileRoute("/executive")({ component: Page, head: () => ({ meta: [{ title: "Executive Reporting — GLC" }] }) });
+export const Route = createFileRoute("/executive")({ component: Page, head: () => ({ meta: [{ title: "Executive Reporting - GLC" }] }) });
 
 const _seed = [37, 112, 55, 168, 90, 22, 143, 78, 132, 45, 160, 100];
 const _seed2 = [0.83, 0.86, 0.85, 0.84, 0.87, 0.83, 0.85, 0.86, 0.84, 0.87, 0.85, 0.86];
@@ -21,7 +21,7 @@ const revenueTrend = Array.from({length:12},(_,i)=>({m: submitted[i].m, r: +(1.6
 
 function Page() {
   return (
-    <AppShell title="Executive Reporting Dashboard" subtitle="Business, operational, security, and financial KPIs — one glance for the executive committee." breadcrumb={["Overview", "Executive"]}
+    <AppShell title="Executive Reporting Dashboard" subtitle="Business, operational, security, and financial KPIs - one glance for the executive committee." breadcrumb={["Overview", "Executive"]}
       actions={<><Pill tone="primary">Fiscal 2026 · YTD</Pill><Pill tone="info">Auto-refresh · 5 min</Pill></>}>
       <div className="grid md:grid-cols-4 gap-4">
         <StatCard label="Applications Submitted" value="18,427" tone="up" icon={Users} delta="▲ 12.4% YoY" />

@@ -4,7 +4,7 @@ import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShe
 import { ShieldCheck, Fingerprint, KeySquare, UserCog, Clock4, KeyRound, Lock, Award, ScrollText, ShieldAlert, Radar, BellRing, Gauge, CheckCircle2 } from "lucide-react";
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
-export const Route = createFileRoute("/security")({ component: Page, head: () => ({ meta: [{ title: "Security Architecture — GLC" }] }) });
+export const Route = createFileRoute("/security")({ component: Page, head: () => ({ meta: [{ title: "Security Architecture - GLC" }] }) });
 
 const controls = [
   { k: "Authentication", i: Fingerprint, s: "OIDC · SAML 2.0", v: "Active" },
@@ -87,10 +87,10 @@ function Page() {
         <SectionCard title="Security Alerts" right={<Pill tone="info">Last 24h</Pill>}>
           <ul className="text-xs divide-y divide-border -my-2">
             {[
-              ["Unusual login from new geography — auto-challenged","3m ago","warn"],
-              ["Anomalous document download rate — rate-limited","28m ago","warn"],
+              ["Unusual login from new geography - auto-challenged","3m ago","warn"],
+              ["Anomalous document download rate - rate-limited","28m ago","warn"],
               ["JWT rotation completed for auth-service","1h ago","info"],
-              ["Vulnerability scan complete — 0 critical","4h ago","success"],
+              ["Vulnerability scan complete - 0 critical","4h ago","success"],
             ].map(([t,w,tone],i)=>(
               <li key={i} className="py-2.5 flex items-start gap-2">
                 <span className={"mt-1 status-dot " + (tone==="success"?"text-success":tone==="warn"?"text-warning":"text-info")} />

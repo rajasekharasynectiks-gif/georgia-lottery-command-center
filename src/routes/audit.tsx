@@ -4,7 +4,7 @@ import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShe
 import { LogIn, LogOut, FileText, DollarSign, Settings, Download, Upload, ShieldAlert, UserCog, Filter, Search, Download as DL, MapPin } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-export const Route = createFileRoute("/audit")({ component: Page, head: () => ({ meta: [{ title: "Audit & Compliance Center — GLC" }] }) });
+export const Route = createFileRoute("/audit")({ component: Page, head: () => ({ meta: [{ title: "Audit & Compliance Center - GLC" }] }) });
 
 const hourly = Array.from({ length: 24 }, (_, i) => ({ h: `${i}h`, v: 400 + Math.round(rand() * 320 + Math.sin(i / 3) * 120) }));
 const events = [

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill } from "@/components/shell/AppShell";
 import { CheckCircle2, Circle, Rocket } from "lucide-react";
 
-export const Route = createFileRoute("/roadmap")({ component: Page, head: () => ({ meta: [{ title: "Future Roadmap — GLC" }] }) });
+export const Route = createFileRoute("/roadmap")({ component: Page, head: () => ({ meta: [{ title: "Future Roadmap - GLC" }] }) });
 
 const phases = [
   { n: "Phase 1", title: "Core Licensing", period: "2024 · Q3", state: "done", pts: ["Applicant portal","Workflow engine","Document services","Payment core"] },
@@ -17,7 +17,7 @@ const phases = [
 
 function Page() {
   return (
-    <AppShell title="Future Roadmap" subtitle="Multi-year delivery roadmap — from core licensing through cloud migration, mobile, and predictive analytics." breadcrumb={["Architecture", "Roadmap"]}
+    <AppShell title="Future Roadmap" subtitle="Multi-year delivery roadmap - from core licensing through cloud migration, mobile, and predictive analytics." breadcrumb={["Architecture", "Roadmap"]}
       actions={<><Pill tone="success">On Track</Pill><Pill tone="info">FY2026 · Q4</Pill></>}>
       <SectionCard title="Program Timeline">
         <div className="relative overflow-x-auto">

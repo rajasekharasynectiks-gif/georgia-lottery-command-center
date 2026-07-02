@@ -25,7 +25,7 @@ function Index() {
   return (
     <AppShell
       title="Enterprise Command Center"
-      subtitle="Unified view of the Georgia Lottery Retailer Licensing Platform — architecture, security posture, operations, and business KPIs."
+      subtitle="Unified view of the Georgia Lottery Retailer Licensing Platform - architecture, security posture, operations, and business KPIs."
       breadcrumb={["Overview"]}
       actions={
         <>
@@ -77,7 +77,7 @@ function Index() {
       </div>
 
       <div className="grid xl:grid-cols-3 gap-4">
-        <SectionCard title="Platform Throughput — Last 24h" description="Applications submitted and payments processed per hour" right={<Pill tone="info">Live</Pill>}>
+        <SectionCard title="Platform Throughput - Last 24h" description="Applications submitted and payments processed per hour" right={<Pill tone="info">Live</Pill>}>
           <div className="h-64">
             <ResponsiveContainer>
               <AreaChart data={volume}>
@@ -129,7 +129,7 @@ function Index() {
           <ul className="text-sm divide-y divide-border -my-2">
             {[
               { i: CheckCircle2, t: "Retailer application #A-208441 approved", meta: "Compliance · 12s ago", tone: "text-success" },
-              { i: ShieldCheck, t: "Voltage encryption key rotated — HSM cluster GA-01", meta: "Security · 2m ago", tone: "text-info" },
+              { i: ShieldCheck, t: "Voltage encryption key rotated - HSM cluster GA-01", meta: "Security · 2m ago", tone: "text-info" },
               { i: Server, t: "Melissa Data integration latency normalized to 128ms", meta: "Ops · 4m ago", tone: "text-muted-foreground" },
               { i: AlertTriangle, t: "Rate-limit warning cleared on Payment Gateway", meta: "Ops · 11m ago", tone: "text-warning" },
               { i: Activity, t: "Deployment glc-web v5.0.1 promoted to Production", meta: "DevOps · 22m ago", tone: "text-primary" },

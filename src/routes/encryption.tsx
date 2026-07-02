@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShell";
 import { Upload, FileCheck2, Bug, ShieldCheck, Database, KeyRound, Unlock, ScrollText, EyeOff } from "lucide-react";
 
-export const Route = createFileRoute("/encryption")({ component: Page, head: () => ({ meta: [{ title: "Voltage Encryption Architecture — GLC" }] }) });
+export const Route = createFileRoute("/encryption")({ component: Page, head: () => ({ meta: [{ title: "Voltage Encryption Architecture - GLC" }] }) });
 
 const flow = [
   { i: Upload, k: "User Upload", d: "Client-side pre-check · size, type, hash", tone: "info" },
@@ -17,7 +17,7 @@ const flow = [
 
 function Page() {
   return (
-    <AppShell title="Voltage Encryption Architecture" subtitle="Field-level, format-preserving encryption for PII and documents — FIPS 140-2, HSM-backed key management, dual-control decryption." breadcrumb={["Security", "Encryption"]}
+    <AppShell title="Voltage Encryption Architecture" subtitle="Field-level, format-preserving encryption for PII and documents - FIPS 140-2, HSM-backed key management, dual-control decryption." breadcrumb={["Security", "Encryption"]}
       actions={<><Pill tone="success">FIPS 140-2</Pill><Pill tone="info">HSM-backed</Pill></>}>
       <div className="grid md:grid-cols-4 gap-4">
         <StatCard label="Encrypted Fields" value="147" delta="Across 42 tables" icon={EyeOff} />

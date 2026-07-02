@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GLC Enterprise Command Center — Retailer Licensing Platform" },
-      { name: "description", content: "Georgia Lottery Corporation — Phase 5 Enterprise Architecture, Security, Operations & Executive Presentation." },
+      { title: "GLC Enterprise Command Center - Retailer Licensing Platform" },
+      { name: "description", content: "Georgia Lottery Corporation - Phase 5 Enterprise Architecture, Security, Operations & Executive Presentation." },
       { name: "author", content: "Georgia Lottery Corporation" },
       { property: "og:title", content: "GLC Enterprise Command Center" },
       { property: "og:description", content: "Enterprise architecture, security, and operations platform for the Georgia Lottery Retailer Licensing System." },
@@ -91,7 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" } as any,
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },
@@ -105,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

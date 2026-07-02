@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShell";
 import { PlayCircle, FileText, MousePointerClick, Award, GraduationCap, CheckCircle2, Users, Timer } from "lucide-react";
 
-export const Route = createFileRoute("/training")({ component: Page, head: () => ({ meta: [{ title: "Training Portal — GLC" }] }) });
+export const Route = createFileRoute("/training")({ component: Page, head: () => ({ meta: [{ title: "Training Portal - GLC" }] }) });
 
 const modules = [
   { k: "Platform Fundamentals", d: "System overview & navigation", dur: "45 min", cov: 100, tone: "success" },

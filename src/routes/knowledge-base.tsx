@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, Pill } from "@/components/shell/AppShell";
 import { BookOpen, HelpCircle, ShieldCheck, PlayCircle, GraduationCap, FileText, Wrench, Search, Bookmark, Star } from "lucide-react";
 
-export const Route = createFileRoute("/knowledge-base")({ component: Page, head: () => ({ meta: [{ title: "Knowledge Base — GLC" }] }) });
+export const Route = createFileRoute("/knowledge-base")({ component: Page, head: () => ({ meta: [{ title: "Knowledge Base - GLC" }] }) });
 
 const cats = [
   { i: BookOpen, k: "User Guides", n: 42 },
@@ -16,10 +16,10 @@ const cats = [
 ];
 
 const featured = [
-  { t: "Retailer onboarding — complete walkthrough", cat: "User Guides", read: "12 min", tag: "success" },
+  { t: "Retailer onboarding - complete walkthrough", cat: "User Guides", read: "12 min", tag: "success" },
   { t: "Understanding license renewal windows", cat: "Policies", read: "6 min", tag: "info" },
   { t: "Troubleshooting document uploads", cat: "Troubleshooting", read: "8 min", tag: "warn" },
-  { t: "Payment failed — next steps", cat: "FAQ", read: "3 min", tag: "info" },
+  { t: "Payment failed - next steps", cat: "FAQ", read: "3 min", tag: "info" },
   { t: "What's new in Phase 5", cat: "Release Notes", read: "10 min", tag: "primary" },
   { t: "Configuring 2FA on your account", cat: "User Guides", read: "5 min", tag: "success" },
 ];

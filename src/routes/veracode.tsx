@@ -3,7 +3,7 @@ import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShe
 import { FileCode2, Bug, Package, Container, Cable, ShieldCheck, TrendingDown } from "lucide-react";
 import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, BarChart, Bar } from "recharts";
 
-export const Route = createFileRoute("/veracode")({ component: Page, head: () => ({ meta: [{ title: "Veracode Compliance — GLC" }] }) });
+export const Route = createFileRoute("/veracode")({ component: Page, head: () => ({ meta: [{ title: "Veracode Compliance - GLC" }] }) });
 
 const scans = [
   { k: "Static Analysis (SAST)", i: FileCode2, last: "12m ago", cov: "98%", tone: "success" },

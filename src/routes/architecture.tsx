@@ -3,12 +3,12 @@ import { AppShell, SectionCard, Pill } from "@/components/shell/AppShell";
 import { Globe, User, Fingerprint, Lock, Router, Cpu, Workflow, FileText, CreditCard, Bell, BarChart3, ScrollText, Boxes, Database, HardDrive, ShieldCheck, Activity, FileClock, Plug } from "lucide-react";
 
 export const Route = createFileRoute("/architecture")({ component: Page,
-  head: () => ({ meta: [{ title: "Solution Architecture — GLC" }, { name: "description", content: "Enterprise architecture for the Georgia Lottery Retailer Licensing Platform." }] }),
+  head: () => ({ meta: [{ title: "Solution Architecture - GLC" }, { name: "description", content: "Enterprise architecture for the Georgia Lottery Retailer Licensing Platform." }] }),
 });
 
 type Node = { key: string; label: string; icon: any; tone?: string };
 const zones: { zone: string; tone: string; desc: string; nodes: Node[] }[] = [
-  { zone: "Public Zone", tone: "border-info/40 bg-info/5", desc: "Untrusted internet — public traffic origin", nodes: [
+  { zone: "Public Zone", tone: "border-info/40 bg-info/5", desc: "Untrusted internet - public traffic origin", nodes: [
     { key: "web", label: "Public Website", icon: Globe },
     { key: "portal", label: "Applicant Portal", icon: User },
   ]},
@@ -46,7 +46,7 @@ function Page() {
     <AppShell title="Enterprise Solution Architecture" subtitle="Cloud-ready, hybrid, and on-premise deployment architecture with clearly demarcated trust zones and DMZ boundaries." breadcrumb={["Architecture", "Solution"]}
       actions={<><Pill tone="primary">Reference Architecture</Pill><Pill tone="info">v5.0</Pill></>}>
       <div className="grid xl:grid-cols-[1.6fr_1fr] gap-4">
-        <SectionCard title="Trust-zoned System Topology" description="Interactive diagram — hover a component for details" right={<div className="flex gap-1.5"><Pill tone="info">Cloud-Ready</Pill><Pill tone="success">Hybrid</Pill><Pill>On-Prem</Pill></div>}>
+        <SectionCard title="Trust-zoned System Topology" description="Interactive diagram - hover a component for details" right={<div className="flex gap-1.5"><Pill tone="info">Cloud-Ready</Pill><Pill tone="success">Hybrid</Pill><Pill>On-Prem</Pill></div>}>
           <div className="relative rounded-md border border-border bg-background/40 p-4 overflow-hidden">
             <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
             <div className="relative space-y-3">

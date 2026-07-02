@@ -4,7 +4,7 @@ import { AppShell, SectionCard, Pill, StatCard } from "@/components/shell/AppShe
 import { Plug, Mail, ShieldCheck, FileText, CreditCard, Building2, Boxes } from "lucide-react";
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
-export const Route = createFileRoute("/integrations")({ component: Page, head: () => ({ meta: [{ title: "Integration Monitoring — GLC" }] }) });
+export const Route = createFileRoute("/integrations")({ component: Page, head: () => ({ meta: [{ title: "Integration Monitoring - GLC" }] }) });
 
 const partners = [
   { k: "Melissa Data", i: Building2, purpose: "Address validation", status: "healthy", latency: 128, success: 99.98 },

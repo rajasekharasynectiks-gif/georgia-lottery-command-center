@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, SectionCard, StatCard, Pill } from "@/components/shell/AppShell";
 import { Server, ServerCog, Database, ShieldCheck, ArrowLeftRight, CheckCircle2, Clock } from "lucide-react";
 
-export const Route = createFileRoute("/disaster-recovery")({ component: Page, head: () => ({ meta: [{ title: "Disaster Recovery — GLC" }] }) });
+export const Route = createFileRoute("/disaster-recovery")({ component: Page, head: () => ({ meta: [{ title: "Disaster Recovery - GLC" }] }) });
 
 function Page() {
   return (
@@ -15,15 +15,15 @@ function Page() {
         <StatCard label="Last DR Test" value="Passed" tone="up" icon={CheckCircle2} delta="Nov 04, 2025" />
       </div>
 
-      <SectionCard title="Site Topology" description="Active–Warm with sync replication for tier-1 stores">
+      <SectionCard title="Site Topology" description="Active-Warm with sync replication for tier-1 stores">
         <div className="grid md:grid-cols-3 gap-4 items-center">
-          <SiteCard name="Primary — Atlanta DC" role="Active" tone="success" />
+          <SiteCard name="Primary - Atlanta DC" role="Active" tone="success" />
           <div className="flex items-center justify-center flex-col text-xs text-muted-foreground">
             <ArrowLeftRight className="size-8 text-primary" />
             <div className="mt-2">Sync: SQL · async: object storage</div>
             <div className="font-mono text-[10px]">lag 2.1s · target ≤ 5s</div>
           </div>
-          <SiteCard name="Secondary — Perimeter DC" role="Warm Standby" tone="warn" />
+          <SiteCard name="Secondary - Perimeter DC" role="Warm Standby" tone="warn" />
         </div>
       </SectionCard>
 
