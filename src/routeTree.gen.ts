@@ -15,6 +15,7 @@ import { Route as TrainingRouteImport } from './routes/training'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as PrintRouteImport } from './routes/print'
 import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as OperationsRouteImport } from './routes/operations'
 import { Route as KnowledgeBaseRouteImport } from './routes/knowledge-base'
@@ -55,6 +56,11 @@ const SecurityRoute = SecurityRouteImport.update({
 const RoadmapRoute = RoadmapRouteImport.update({
   id: '/roadmap',
   path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrintRoute = PrintRouteImport.update({
+  id: '/print',
+  path: '/print',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PresentationRoute = PresentationRouteImport.update({
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/knowledge-base': typeof KnowledgeBaseRoute
   '/operations': typeof OperationsRoute
   '/presentation': typeof PresentationRoute
+  '/print': typeof PrintRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByTo {
   '/knowledge-base': typeof KnowledgeBaseRoute
   '/operations': typeof OperationsRoute
   '/presentation': typeof PresentationRoute
+  '/print': typeof PrintRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
@@ -164,6 +172,7 @@ export interface FileRoutesById {
   '/knowledge-base': typeof KnowledgeBaseRoute
   '/operations': typeof OperationsRoute
   '/presentation': typeof PresentationRoute
+  '/print': typeof PrintRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
   '/support': typeof SupportRoute
@@ -185,6 +194,7 @@ export interface FileRouteTypes {
     | '/knowledge-base'
     | '/operations'
     | '/presentation'
+    | '/print'
     | '/roadmap'
     | '/security'
     | '/support'
@@ -204,6 +214,7 @@ export interface FileRouteTypes {
     | '/knowledge-base'
     | '/operations'
     | '/presentation'
+    | '/print'
     | '/roadmap'
     | '/security'
     | '/support'
@@ -223,6 +234,7 @@ export interface FileRouteTypes {
     | '/knowledge-base'
     | '/operations'
     | '/presentation'
+    | '/print'
     | '/roadmap'
     | '/security'
     | '/support'
@@ -243,6 +255,7 @@ export interface RootRouteChildren {
   KnowledgeBaseRoute: typeof KnowledgeBaseRoute
   OperationsRoute: typeof OperationsRoute
   PresentationRoute: typeof PresentationRoute
+  PrintRoute: typeof PrintRoute
   RoadmapRoute: typeof RoadmapRoute
   SecurityRoute: typeof SecurityRoute
   SupportRoute: typeof SupportRoute
@@ -293,6 +306,13 @@ declare module '@tanstack/react-router' {
       path: '/roadmap'
       fullPath: '/roadmap'
       preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/print': {
+      id: '/print'
+      path: '/print'
+      fullPath: '/print'
+      preLoaderRoute: typeof PrintRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/presentation': {
@@ -387,6 +407,7 @@ const rootRouteChildren: RootRouteChildren = {
   KnowledgeBaseRoute: KnowledgeBaseRoute,
   OperationsRoute: OperationsRoute,
   PresentationRoute: PresentationRoute,
+  PrintRoute: PrintRoute,
   RoadmapRoute: RoadmapRoute,
   SecurityRoute: SecurityRoute,
   SupportRoute: SupportRoute,
@@ -397,13 +418,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
