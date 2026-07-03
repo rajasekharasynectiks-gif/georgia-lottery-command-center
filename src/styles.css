@@ -256,3 +256,60 @@ html.dark { color-scheme: dark; }
   stroke-dasharray: 4 4;
   animation: flow-dash 1.2s linear infinite;
 }
+
+/* ============================================================
+   Print styles — used for /print route and browser Cmd/Ctrl+P
+   ============================================================ */
+@media print {
+  @page {
+    size: Letter landscape;
+    margin: 0.4in;
+  }
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    color-scheme: light !important;
+  }
+  /* Force light theme tokens for print regardless of user preference */
+  html, html.dark {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.19 0.03 260);
+    --surface: oklch(1 0 0);
+    --surface-2: oklch(0.97 0.006 250);
+    --card: oklch(1 0 0);
+    --muted: oklch(0.955 0.008 250);
+    --muted-foreground: oklch(0.42 0.02 258);
+    --border: oklch(0.88 0.01 250);
+    --primary: oklch(0.24 0.06 258);
+    --primary-foreground: oklch(0.99 0.003 240);
+  }
+  /* Hide interactive chrome that shouldn't appear in the PDF */
+  .print-hide,
+  .app-sidebar,
+  .app-topbar,
+  .app-footer {
+    display: none !important;
+  }
+  /* Section-per-page breaks on the print route */
+  .print-doc .print-page {
+    page-break-after: always;
+    break-after: page;
+  }
+  .print-doc .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  /* Repaint safety */
+  * {
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  /* Prevent card content from breaking awkwardly */
+  .panel, section, table, tr, li, .rounded-md, .rounded-lg {
+    break-inside: avoid;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
