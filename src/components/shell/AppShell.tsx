@@ -1,40 +1,19 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import {
-  LayoutDashboard, Network, GitBranch, ShieldCheck, KeyRound, FileScan,
-  ScrollText, Activity, Plug, ServerCog, Rocket, BookOpen, GraduationCap,
-  LifeBuoy, LineChart, Presentation, Map, Bell, Search, ChevronRight, Circle,
-  PanelLeftClose, PanelLeftOpen,
+  LayoutDashboard, Network, GitBranch, KeyRound, Plug, ServerCog,
+  Bell, Search, ChevronRight, Circle, PanelLeftClose, PanelLeftOpen, Printer,
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
-  { group: "Overview", items: [
-    { to: "/", label: "Executive Overview", icon: LayoutDashboard },
-    { to: "/executive", label: "Executive Reporting", icon: LineChart },
-    { to: "/presentation", label: "Presentation Mode", icon: Presentation },
-  ]},
-  { group: "Architecture", items: [
-    { to: "/architecture", label: "Solution Architecture", icon: Network },
+  { group: "Solution Architecture", items: [
+    { to: "/", label: "Overview", icon: LayoutDashboard },
+    { to: "/architecture", label: "System Topology", icon: Network },
     { to: "/workflow", label: "Application Workflow", icon: GitBranch },
-    { to: "/roadmap", label: "Future Roadmap", icon: Map },
-  ]},
-  { group: "Security & Compliance", items: [
-    { to: "/security", label: "Security Architecture", icon: ShieldCheck },
-    { to: "/encryption", label: "Voltage Encryption", icon: KeyRound },
-    { to: "/veracode", label: "Veracode Compliance", icon: FileScan },
-    { to: "/audit", label: "Audit & Compliance", icon: ScrollText },
-  ]},
-  { group: "Operations", items: [
-    { to: "/operations", label: "Monitoring & Ops", icon: Activity },
-    { to: "/integrations", label: "Integrations", icon: Plug },
-    { to: "/disaster-recovery", label: "Disaster Recovery", icon: ServerCog },
-    { to: "/devops", label: "DevOps", icon: Rocket },
-  ]},
-  { group: "Support", items: [
-    { to: "/knowledge-base", label: "Knowledge Base", icon: BookOpen },
-    { to: "/training", label: "Training Portal", icon: GraduationCap },
-    { to: "/support", label: "Warranty & Support", icon: LifeBuoy },
+    { to: "/integrations", label: "Integration Architecture", icon: Plug },
+    { to: "/encryption", label: "Data Protection", icon: KeyRound },
+    { to: "/disaster-recovery", label: "Resilience & DR", icon: ServerCog },
   ]},
 ];
 
@@ -58,12 +37,12 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
 
   return (
     <div className="min-h-screen flex bg-background text-foreground">
-      <aside className={["hidden lg:flex flex-col border-r border-sidebar-border bg-sidebar sticky top-0 h-screen transition-[width] duration-200", collapsed ? "w-16" : "w-64"].join(" ")}>
+      <aside className={["app-sidebar hidden lg:flex flex-col border-r border-sidebar-border bg-sidebar sticky top-0 h-screen transition-[width] duration-200", collapsed ? "w-16" : "w-64"].join(" ")}>
         <div className="h-16 flex items-center gap-3 px-3 border-b border-sidebar-border">
           <div className="size-9 shrink-0 rounded-md bg-gradient-to-br from-primary to-primary-hover grid place-items-center text-primary-foreground font-display font-bold shadow-[var(--shadow-glow)]">GL</div>
           <div className={["leading-tight min-w-0", collapsed ? "hidden" : ""].join(" ")}>
             <div className="text-[13px] font-semibold tracking-wide text-sidebar-foreground">Georgia Lottery</div>
-            <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Enterprise Console</div>
+            <div className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Solution Architecture</div>
           </div>
           <button
             type="button"
@@ -108,19 +87,19 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
         <div className={["px-4 py-3 border-t border-sidebar-border text-[11px] text-muted-foreground", collapsed ? "px-2" : ""].join(" ")}>
           <div className={["flex items-center gap-2", collapsed ? "justify-center" : ""].join(" ")}>
             <span className="status-dot text-success" />
-            <span className={collapsed ? "hidden" : ""}>All systems operational</span>
+            <span className={collapsed ? "hidden" : ""}>RFA Submission · v5.0</span>
           </div>
-          <div className={["mt-1 font-mono text-[10px] opacity-60", collapsed ? "hidden" : ""].join(" ")}>env: prod-us-east - v5.0.1</div>
+          <div className={["mt-1 font-mono text-[10px] opacity-60", collapsed ? "hidden" : ""].join(" ")}>doc: GLC-SA-2026-11-15</div>
         </div>
       </aside>
 
       <div className="flex-1 min-w-0 flex flex-col">
-        <header className="h-16 border-b border-border bg-surface/60 backdrop-blur sticky top-0 z-30">
+        <header className="app-topbar h-16 border-b border-border bg-surface/60 backdrop-blur sticky top-0 z-30">
           <div className="h-full flex items-center gap-4 px-6">
             <div className="hidden md:flex items-center gap-1 text-xs text-muted-foreground">
               <span>GLC</span>
               <ChevronRight className="size-3" />
-              <span>Phase 5</span>
+              <span>Solution Architecture</span>
               {breadcrumb?.map((b, i) => (
                 <span key={i} className="flex items-center gap-1">
                   <ChevronRight className="size-3" />
@@ -131,13 +110,16 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
             <div className="ml-auto flex items-center gap-3">
               <div className="hidden md:flex items-center gap-2 h-9 w-72 rounded-md border border-border bg-input/40 px-3 text-xs text-muted-foreground">
                 <Search className="size-3.5" />
-                <span>Search architecture, controls, incidents...</span>
+                <span>Search components, integrations, controls...</span>
                 <span className="ml-auto font-mono text-[10px] opacity-70">K</span>
               </div>
-              <button className="relative size-9 grid place-items-center rounded-md border border-border bg-surface hover:bg-surface-2">
-                <Bell className="size-4" />
-                <span className="absolute top-1.5 right-1.5 size-1.5 rounded-full bg-primary" />
-              </button>
+              <Link
+                to="/print"
+                className="hidden md:inline-flex h-9 items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-3 text-xs font-semibold text-primary hover:bg-primary/15"
+                title="Print / export to PDF"
+              >
+                <Printer className="size-3.5" /> Print / PDF
+              </Link>
               <ThemeToggle />
               <div className="flex items-center gap-2 pl-3 border-l border-border">
                 <div className="size-8 rounded-full bg-gradient-to-br from-accent to-primary grid place-items-center text-[11px] font-semibold text-primary-foreground">JR</div>
@@ -150,7 +132,7 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
           </div>
         </header>
 
-        <div className="px-6 pt-6 pb-3 border-b border-border bg-gradient-to-b from-surface/40 to-transparent">
+        <div className="app-page-header px-6 pt-6 pb-3 border-b border-border bg-gradient-to-b from-surface/40 to-transparent">
           <div className="flex items-start justify-between gap-6 flex-wrap">
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
@@ -162,8 +144,8 @@ export function AppShell({ children, title, subtitle, breadcrumb, actions }: {
 
         <main className="flex-1 min-w-0 p-6 space-y-6">{children}</main>
 
-        <footer className="border-t border-border py-3 px-6 text-[11px] text-muted-foreground flex flex-wrap gap-4 justify-between">
-          <span>Georgia Lottery Corporation - Retailer Licensing Platform - Phase 5</span>
+        <footer className="app-footer border-t border-border py-3 px-6 text-[11px] text-muted-foreground flex flex-wrap gap-4 justify-between">
+          <span>Georgia Lottery Corporation · Retailer Licensing Platform · Solution Architecture v5.0</span>
           <span className="flex items-center gap-3">
             <span className="flex items-center gap-1.5"><Circle className="size-2 fill-success text-success" /> SOC 2 Type II</span>
             <span className="flex items-center gap-1.5"><Circle className="size-2 fill-success text-success" /> WCAG 2.1 AA</span>
