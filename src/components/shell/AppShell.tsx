@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   LayoutDashboard, Network, GitBranch, KeyRound, Plug, ServerCog,
-  Bell, Search, ChevronRight, Circle, PanelLeftClose, PanelLeftOpen, Printer,
+  Search, ChevronRight, Circle, PanelLeftClose, PanelLeftOpen, Printer,
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
